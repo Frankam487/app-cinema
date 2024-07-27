@@ -5,6 +5,7 @@
     text-align: center;
     letter-spacing: 2px;
   }
+
   nav {
     position: absolute;
     top: 16px;
@@ -15,6 +16,7 @@
       display: flex;
       width: 180px;
       justify-content: space-between;
+      white-space: nowrap;
 
       a {
         text-decoration: none;
@@ -29,10 +31,12 @@
           text-decoration: none;
           color: $white;
         }
+
         &:hover {
           background: $black;
         }
       }
+
       a.nav-active {
         background: $color-1;
 
