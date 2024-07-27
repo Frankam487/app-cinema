@@ -1,17 +1,26 @@
 import { NavLink } from "react-router-dom";
 
 const Headers = () => {
-    return ( 
+    return (
         <div className="header">
             <nav>
                 <ul>
+                <li>
+
                     <NavLink to="/">
-                        <li>Acceuil</li>
+                        Acceuil
                     </NavLink>
+                </li>
+                <li>
+
+                    <NavLink to="/">
+                        Coup de coeur
+                    </NavLink>
+                </li>
                 </ul>
             </nav>
         </div>
-     );
+    );
 }
- 
+
 export default Headers;
