@@ -1,8 +1,9 @@
+import Header from "./components/Header";
 const LikePage = () => {
     return (
         <div className="user-list-page">
-        {/* <Headers/>  */}
-            <h1>likepage</h1>
+            <Header />
+            <h1>favories</h1>
         </div>
     );
 }
