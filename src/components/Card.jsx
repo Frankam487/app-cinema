@@ -69,22 +69,30 @@ const Card = ({ movie }) => {
                     break;
                 default:
                     break;
-            
+            }
+            return genreArray.map((genre) => <li key={genre}>{genre}</li>);
         }
     }
-}
-return (
-    <div className="card">
-        <img src={movie.poster_path ?
-            "https://image.tmdb.org/t/p/original/" + movie.poster_path : "./img/poster.jpg"}
-            alt={`affiche ${movie.title}`} />
-        <h2>{movie.title}</h2>
-        {movie.release_date ?
-            <h5>Sorti le : {dateFormater(movie.release_date).join('/')}</h5> : null
-        }
-        <h4>{movie.vote_average}/10 <span>⭐</span></h4>
-    </div>
-);
+    return (
+        <div className="card">
+            <img src={movie.poster_path ?
+                "https://image.tmdb.org/t/p/original/" + movie.poster_path : "./img/poster.jpg"}
+                alt={`affiche ${movie.title}`} />
+            <h2>{movie.title}</h2>
+            {movie.release_date ?
+                <h5>Sorti le : {dateFormater(movie.release_date).join('/')}</h5> : null
+            }
+            <h4>{movie.vote_average}/10 <span>⭐</span></h4>
+            <ul>
+                {
+                    movie.genre_ids ? genreFinder() : null
+                }
+            </ul>
+            {movie.overview ? <h3>Synopsis</h3> : ""}
+            <p>{movie.overview}</p>
+            <div className="btn">Ajouter aux coup de coeur</div>
+        </div>
+    );
 }
 
 export default Card;
